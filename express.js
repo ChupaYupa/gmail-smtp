@@ -26,7 +26,7 @@ app.use(cors({
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
-//create andpoint
+//create andpointt
 app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
    let info =  await transporter.sendMail({

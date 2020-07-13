@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-let smtp_login = process.env.SMTP_LOGIN
-let smtp_password = process.env.SMTP_PASSWORD
+let smtp_login = process.env.SMTP_LOGIN || "docsperj@gmail.com";
+let smtp_password = process.env.SMTP_PASSWORD || ""
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -31,6 +31,7 @@ app.get('/', function (req, res) {
 app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
     await transporter.sendMail({
+        type: "OAuth2",
         from: 'https://chupayupa.github.io/chupa/', // sender address
         to: "docsperj@gmail.com", // list of receivers
         subject: "HR", // Subject line

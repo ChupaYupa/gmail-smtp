@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 //create andpointt
-app.post('/', async function (req, res) {
+app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
    let info =  await transporter.sendMail({
         from: 'Toma', // sender address

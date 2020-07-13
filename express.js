@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 //Departure Permit
 app.use(cors({
-    origin: 'http://localhost:3001'
+    origin: 'https://chupayupa.github.io/chupa'
 }));
 
 

@@ -21,9 +21,7 @@ app.use(bodyParser.json());
 
 
 //Departure Permit
-app.use(cors({
-    origin: 'https://chupayupa.github.io/chupa'
-}));
+app.use(cors());
 
 
 app.get('/', function (req, res) {
@@ -32,7 +30,7 @@ app.get('/', function (req, res) {
 //create andpointt
 app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
-   let info =  await transporter.sendMail({
+    await transporter.sendMail({
         from: 'Toma', // sender address
         to: "docsperj@gmail.com", // list of receivers
         subject: "HR", // Subject line
@@ -56,5 +54,5 @@ app.post('/submit', async function (req, res) {
 //PORT APP LISTENER
 let port = process.env.PORT || 3010
 app.listen(port, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('Example app listening on port 3010!');
 });

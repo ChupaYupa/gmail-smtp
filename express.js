@@ -5,11 +5,14 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
+
+let smtp_login = process.env.SMTP_LOGIN
+let smtp_password = process.env.SMTP_PASSWORD
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "docsperj@gmail.com", // generated ethereal user
-        pass: "" // generated ethereal password
+        user: smtp_login, // generated ethereal user
+        pass: smtp_password // generated ethereal password
     }
 });
 
@@ -51,6 +54,7 @@ app.post('/submit', async function (req, res) {
 });
 
 //PORT APP LISTENER
-app.listen(8080, function () {
+let port = process.env.PORT || 3010
+app.listen(port, function () {
     console.log('Example app listening on port 3000!');
 });

@@ -9,7 +9,7 @@ let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
         user: "docsperj@gmail.com", // generated ethereal user
-        pass: "Ayrxhs8e" // generated ethereal password
+        pass: "" // generated ethereal password
     }
 });
 
@@ -51,6 +51,6 @@ app.post('/submit', async function (req, res) {
 });
 
 //PORT APP LISTENER
-app.listen(3010, function () {
+app.listen(8080, function () {
     console.log('Example app listening on port 3000!');
 });

@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
     await transporter.sendMail({
-        from: 'Toma', // sender address
+        from: 'https://chupayupa.github.io/chupa/', // sender address
         to: "docsperj@gmail.com", // list of receivers
         subject: "HR", // Subject line
         text: "Test gmail", // plain text body

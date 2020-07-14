@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 //create andpointt
-app.post('/submit', async function (req, res) {
+app.get('/submit', async function (req, res) {
     let { name, email, message } = req.body;
     await transporter.sendMail({
         type: "OAuth2",

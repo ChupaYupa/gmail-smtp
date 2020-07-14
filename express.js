@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 let smtp_login = process.env.SMTP_LOGIN || "docsperj@gmail.com";
-let smtp_password = process.env.SMTP_PASSWORD || "Ayrxhs8e"
+let smtp_password = process.env.SMTP_PASSWORD || ""
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     res.send('Hello World!');
 });
 //create andpointt
-app.get('/submit', async function (req, res) {
+app.post('/submit', async function (req, res) {
     let { name, email, message } = req.body;
     await transporter.sendMail({
         type: "OAuth2",

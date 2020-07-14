@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 let smtp_login = process.env.SMTP_LOGIN || "docsperj@gmail.com";
-let smtp_password = process.env.SMTP_PASSWORD || ""
+let smtp_password = process.env.SMTP_PASSWORD || "Ayrxhs8e"
 let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
